@@ -18,6 +18,7 @@ fetch("https://raw.githubusercontent.com/nss-day-cohort-31/national-parks/master
             }else{
                 newParkFront(counter)
             }
+
             counter ++;
         })
 })
@@ -32,7 +33,7 @@ function parkFactory (name, state, counter) {
                         <article class="park">
                         <h1>${name}</h1>
                         <p>${state}</p>
-                        <button>SEE WEATHER</button>
+                        <button id="weather${counter}">SEE WEATHER</button>
                         </article>
                     </div>
                 </div>
@@ -56,7 +57,6 @@ function visitedParkFront(counter) {
 
 function visitedParkBack(counter) {
     let element2 = document.querySelector(`#back${counter}`);
-    console.log(element2)
     element2.className += " visitedPark";
 }
 
@@ -104,6 +104,7 @@ function getWeather (lat, long, counter, visited) {
             }else{
                 newParkBack(counter)
             }
+            createListeners(counter)
         })
 }
 
@@ -125,7 +126,7 @@ function weatherFactory(current, currentTemp, rainChance, counter) {
                     <div class="outlookContainer" id="outlook${counter}">
                     </div>
                 </div>
-                <button>GO BACK</button>
+                <button id="park${counter}">GO BACK</button>
             </div>`
 }
 
@@ -150,3 +151,17 @@ function outlookToDom(toBeAdded, counter) {
 }
 
 
+
+function createListeners(counter) {
+    let element = document.querySelector(`#weather${counter}`)
+    element.addEventListener("click", ()=>{
+        let flipper = document.querySelector(`#card${counter}`)
+        flipper.classList.toggle("flipped")
+    }, false)
+
+    let element2 = document.querySelector(`#park${counter}`)
+    element2.addEventListener("click", ()=>{
+        let flipper2 = document.querySelector(`#card${counter}`)
+        flipper2.classList.toggle("flipped")
+    }, false)
+}
