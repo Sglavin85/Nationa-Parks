@@ -48,9 +48,9 @@ article {
     margin: 3px;
     justify-content: space-around;
     align-content: center;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4), 0 3px 9px 0 rgba(0, 0, 0, 0.7);
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4), 0 3px 9px 0 rgba(0, 0, 0, 0.7); */
     background-color: rgba(255, 255, 255, 0);
-    transition: transform .6s ease, box-shadow .8s, color .8s, background-color .6s;
+    transition: transform .6s ease, box-shadow .8s, color .8s, background-color .6s;,
     color: rgba(0, 0, 0, 0.6);
     transform-style: preserve-3d;
 }
@@ -73,8 +73,8 @@ article {
     margin: 15px;
 }
 
-.cardcontainer:hover .card {
+.flipped {
     transform: rotateY(180deg);
-    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3), 0 0 35px 0 rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3), 0 0 35px 0 rgba(0, 0, 0, 0.15); */
     color: rgba(0, 0, 0, 0.87);
 }
